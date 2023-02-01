@@ -1,8 +1,5 @@
 ﻿
 using System.Collections;
-using System.Security;
-using System.Security.Cryptography;
-using System.Xml.Linq;
 
 namespace DataStructures
 {
@@ -36,8 +33,6 @@ namespace DataStructures
 
     public class MyLinkedList<T>: IEnumerable<T>
     {
-        
-
         public Node<T>? Head { get; private set; }
         public int Count { get; private set; }
 
@@ -82,9 +77,6 @@ namespace DataStructures
                 Head.Next = current;
             }
         }
-
-
-        
 
         public void AddInMiddle(T value)
         {
@@ -148,7 +140,6 @@ namespace DataStructures
         public void Reverse()
         {
             MyLinkedList<T> rev = new MyLinkedList<T>();
-            
             var current = Head;
             while (current is not null)
             {
@@ -156,28 +147,13 @@ namespace DataStructures
                 current = current.Next;
             }
             Head = rev.Head;
-
         }
-
-        
 
         public void Clear()
         {
             Head = null;
             Count = 0;
         }
-
-
-        
-
-
-
-
-
-
-
-
-
 
         public IEnumerator<T> GetEnumerator()
         {
