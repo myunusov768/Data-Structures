@@ -28,8 +28,8 @@ namespace DataStructures
                 return true;
             return false;
         }
-    }
 
+    }
 
     public class MyLinkedList<T>: IEnumerable<T>
     {
@@ -94,7 +94,7 @@ namespace DataStructures
             while (i <= middle)
             {
                 i++;
-                if (i.Equals(middle))
+                if (i == middle)
                 {
                     var previous = current.Next;
                     current.Next = node;
@@ -154,8 +154,7 @@ namespace DataStructures
             Head = null;
             Count = 0;
         }
-
-
+        //Select value in list
         public bool Contains(T value)
         {
             var current = Head;
@@ -169,7 +168,7 @@ namespace DataStructures
             }
             return false;
         }
-
+        //Select value in list
         public IEnumerator<T> GetEnumerator()
         {
             var current = Head;
