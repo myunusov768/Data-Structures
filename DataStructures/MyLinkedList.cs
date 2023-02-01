@@ -26,7 +26,7 @@ namespace DataStructures
         {
             if(EqualityComparer<T>.Default.Equals( value , Value))
                 return true;
-            else return false;
+            return false;
         }
     }
 
@@ -36,7 +36,7 @@ namespace DataStructures
         public Node<T>? Head { get; private set; }
         public int Count { get; private set; }
 
-
+        //Adds a value
         public void Add(T value)
         {
             var node = new Node<T>(value);
@@ -59,7 +59,7 @@ namespace DataStructures
                 current = current.Next;
             }
         }
-
+        //Adds a value in head
         public void AddInHead(T value)
         {
             var node = new Node<T>(value);
@@ -77,7 +77,7 @@ namespace DataStructures
                 Head.Next = current;
             }
         }
-
+        //Adds a value in middle
         public void AddInMiddle(T value)
         {
             var node = new Node<T>(value);
@@ -105,7 +105,7 @@ namespace DataStructures
                 current = current.Next;
             }
         }
-
+        //Delete a tail
         public void DeleteTial()
         {
             if (Head is not null && Head.Next is null)
@@ -126,7 +126,7 @@ namespace DataStructures
                 current = current.Next;
             }
         }
-
+        //Delete a head
         public void DeleteHead()
         {
             var previous = Head;
@@ -136,7 +136,7 @@ namespace DataStructures
                 Count--;
             }
         }
-
+        //Reverse list
         public void Reverse()
         {
             MyLinkedList<T> rev = new MyLinkedList<T>();
@@ -148,11 +148,26 @@ namespace DataStructures
             }
             Head = rev.Head;
         }
-
+        //Clear list
         public void Clear()
         {
             Head = null;
             Count = 0;
+        }
+
+
+        public bool Contains(T value)
+        {
+            var current = Head;
+            while (current is not null)
+            {
+                if (current.MyEquals(value))
+                {
+                    return true;
+                }
+                current = current.Next;
+            }
+            return false;
         }
 
         public IEnumerator<T> GetEnumerator()

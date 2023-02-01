@@ -125,6 +125,20 @@ namespace DataStructures
             Head = rev.Head;
         }
 
+        public bool Contains(T value)
+        {
+            var current = Head;
+            while (current is not null)
+            {
+                if (current.MyEquals(value))
+                {
+                    return true;
+                }
+                current = current.Next;
+            }
+            return false;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             var current = Head;
