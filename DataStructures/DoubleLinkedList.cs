@@ -37,7 +37,7 @@ namespace DoubleLinkedList
 
         public void Add(T value)
         {
-            //В двухсвязаниие списки новая значение добавится в голове, а в односвяязанный в хвост
+            //В двусвязные списки новая значение добавится в голове, а в односвяязанный в хвост
             var node = new Node<T>(value);
             if (Head is null)
             {
