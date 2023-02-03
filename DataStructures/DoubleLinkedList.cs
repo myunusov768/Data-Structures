@@ -75,6 +75,10 @@ namespace DoubleLinkedList
                 return false;
             if (Head.Equals(value, Head.Value))
             {
+                var nextN = Head.Next;
+                nextN.Previous = null;
+                Head= nextN;
+
                 Count--;
                 return true;
             }
