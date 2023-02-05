@@ -26,6 +26,11 @@ myHashTable["Muhammad16"] = 16;
 
 foreach (var item in myHashTable)
     Console.WriteLine(item?.Value ?? 0);
+Console.WriteLine(new String('-', 15));
+myHashTable.Reverse();
+foreach (var item in myHashTable)
+    Console.WriteLine(item?.Value ?? 0);
+Console.WriteLine(new String('-', 15));
 
 //Console.WriteLine(myHashTable.GetValue(key));
 

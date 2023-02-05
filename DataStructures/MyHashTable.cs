@@ -6,10 +6,9 @@ namespace MyHashTable
 {
     public class HashTableNode<T, K>
     {
-        private K key;
-        private T value;
-        public K Key { get => key; set { if (value is not null) key = value; } }
-        public T Value { get => value; set { if (value is not null) this.value = value; } }
+        
+        public K Key { get; set; }
+        public T Value { get; set; }
         public HashTableNode(K key, T value) 
         {
             Key = key;
@@ -103,19 +102,22 @@ namespace MyHashTable
             }
             return false;
         }
-        //Реверсировать Hashtable.
+        /*//Реверсировать Hashtable.
         public void Reverse()
         {
             if(_hashTableNodes is null || LengthMyHashTable == 0)
                 return;
             var newHashTable = _hashTableNodes;
-            int j = LengthMyHashTable-1;
+            int j = LengthMyHashTable - 1;
             for (int i = 0; i < LengthMyHashTable; i++)
             {
-                newHashTable[j] = _hashTableNodes[i];
+                newHashTable[i].Key = _hashTableNodes[j].Key;
+                newHashTable[i].Value = _hashTableNodes[j].Value;
+
                 j--;
             }
-        }
+            _hashTableNodes = newHashTable;
+        }*/
 
 
 
