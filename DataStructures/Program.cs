@@ -1,8 +1,45 @@
 ﻿using DataStructures;
 using DoubleLinkedList;
+using MyHashTable;
+
+MyHashTable<int, string> myHashTable = new MyHashTable<int, string>(15);
+
+var key = "Muhammad";
 
 
-DoubleLinkedList();
+myHashTable["Muhammad1"] = 1;
+myHashTable["Muhammad2"] = 2;
+myHashTable["Muhammad3"] = 3;
+myHashTable["Muhammad4"] = 4;
+myHashTable["Muhammad5"] = 5;
+myHashTable["Muhammad6"] = 6;
+myHashTable["Muhammad7"] = 7;
+myHashTable["Muhammad8"] = 8;
+myHashTable["Muhammad9"] = 9;
+myHashTable["Muhammad10"] = 10;
+myHashTable["Muhammad11"] = 11;
+myHashTable["Muhammad12"] = 12;
+myHashTable["Muhammad13"] = 13;
+myHashTable["Muhammad14"] = 14;
+myHashTable["Muhammad15"] = 15;
+myHashTable["Muhammad16"] = 16;
+
+foreach (var item in myHashTable)
+    Console.WriteLine(item?.Value ?? 0);
+
+//Console.WriteLine(myHashTable.GetValue(key));
+
+
+
+
+
+
+
+
+
+
+
+
 
 void DoubleLinkedList()
 {
@@ -19,12 +56,17 @@ void DoubleLinkedList()
         Console.WriteLine($"Previous: {item.Previous?.Value ?? 0} <- item: {item.Value} -> Next: {item.Next?.Value ?? 0}");
     Console.WriteLine("--------");
 
+
+
     ints.Reverse();
 
     Console.WriteLine("--------");
 
     foreach (var item in ints)
         Console.WriteLine($"Previous: {item.Previous?.Value ?? 0} <- item: {item.Value} -> Next: {item.Next?.Value ?? 0}");
+
+
+    
 }
 
 
