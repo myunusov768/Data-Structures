@@ -102,22 +102,6 @@ namespace MyHashTable
             }
             return false;
         }
-        /*//Реверсировать Hashtable.
-        public void Reverse()
-        {
-            if(_hashTableNodes is null || LengthMyHashTable == 0)
-                return;
-            var newHashTable = _hashTableNodes;
-            int j = LengthMyHashTable - 1;
-            for (int i = 0; i < LengthMyHashTable; i++)
-            {
-                newHashTable[i].Key = _hashTableNodes[j].Key;
-                newHashTable[i].Value = _hashTableNodes[j].Value;
-
-                j--;
-            }
-            _hashTableNodes = newHashTable;
-        }*/
 
 
 
