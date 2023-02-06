@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
 
 namespace MyHashTable
 {
