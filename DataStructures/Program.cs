@@ -2,16 +2,44 @@
 using DoubleLinkedList;
 using MyHashTable;
 using MyStackList;
+using MyQueueList;
 
 try
 {
 
-    StackList();
+    MyQueueList();
 }
 catch(Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
+
+
+void MyQueueList()
+{
+    MyQueueList<string> strings= new MyQueueList<string>();
+
+    strings.Enqueue("Salom1");
+    
+    foreach (var item in strings)
+        Console.WriteLine(item);
+    Console.WriteLine("---------------");
+    string[] copy =  strings.ToArray();
+    foreach (var item in copy)
+        Console.WriteLine(item);
+
+    Console.WriteLine("---------------");
+    string[] array = strings.SplitListToArrayFromIndex(3);
+    if (array != null)
+    {
+        foreach (var item in array)
+            Console.WriteLine(item);
+    }
+    
+
+
+}
+
 void StackList()
 {
     MyStackList<string> myStackList= new MyStackList<string>();
@@ -24,9 +52,11 @@ void StackList()
     myStackList.Push("Muboraksho");
     myStackList.Push("Suhrob");
     myStackList.Push("Tolibjon");
+    
+    Queue<string> queue = new Queue<string>();
+    
 
-
-    foreach(var item in myStackList)
+    foreach (var item in myStackList)
         Console.WriteLine(item);
     Console.WriteLine(new String('-', 15));
 

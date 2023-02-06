@@ -1,18 +1,12 @@
 ﻿using System.Collections;
-
 namespace MyStackList
 {
-    public class Node<T>
-    {
-        public T Value { get; set; }
-        public Node<T> Next { get; set; }
-        public Node(T value) { Value = value; }
-    }
+   
 
     //Работает по механизму Last-in-first-out
     public class MyStackList<T> : IEnumerable<T>
     {
-        private T[] nodeArray;
+        private readonly T[] nodeArray;
         public int Length { get; private set; }
         private int top = -1;
 
@@ -35,6 +29,7 @@ namespace MyStackList
             nodeArray[top] = default;
             top--;
         }
+        
         public T Peek() 
         {
             if(top == -1)
@@ -59,10 +54,10 @@ namespace MyStackList
             for (int i = top; i >= 0; i--)
                 yield return nodeArray[i];
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
+
     }
 }
