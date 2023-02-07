@@ -3,18 +3,39 @@ using DoubleLinkedList;
 using MyHashTable;
 using MyStackList;
 using MyQueueList;
+using MyQueue;
 
 try
 {
 
-    MyQueueList();
+    MyQueue();
 }
 catch(Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
 
+void MyQueue()
+{
+    MyQueue<string> strings = new MyQueue<string>();
 
+    strings.Enqueue("Salom1");
+    strings.Enqueue("Salom2");
+    strings.Enqueue("Salom3");
+    strings.Enqueue("Salom4");
+    strings.Enqueue("Salom5");
+
+    foreach (var item in strings)
+        Console.WriteLine(item);
+
+    Console.WriteLine("---------------");
+
+    strings.Dequeue();
+    foreach (var item in strings)
+        Console.WriteLine(item);
+    Console.WriteLine("---------------");
+
+}
 void MyQueueList()
 {
     MyQueueList<string> strings= new MyQueueList<string>();
@@ -30,11 +51,7 @@ void MyQueueList()
 
     Console.WriteLine("---------------");
     string[] array = strings.SplitListToArrayFromIndex(3);
-    if (array != null)
-    {
-        foreach (var item in array)
-            Console.WriteLine(item);
-    }
+    
     
 
 
