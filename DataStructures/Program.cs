@@ -4,15 +4,136 @@ using MyHashTable;
 using MyStackList;
 using MyQueueList;
 using MyQueue;
+using MyTree;
+using Graph;
 
 try
 {
 
-    MyQueue();
+    MyGraph();
+
+    //MyTree();
+    //Console.WriteLine(new String('-',20));
+    //MyTree1();
 }
 catch(Exception ex)
 {
     Console.WriteLine(ex.Message);
+}
+
+void MyGraph()
+{
+    MyGraph graph = new MyGraph();
+    graph.AddVertex(1);
+    graph.AddVertex(2);
+    graph.AddVertex(3);
+    graph.AddVertex(4);
+    graph.AddVertex(5);
+    graph.AddVertex(6);
+    graph.AddVertex(7);
+
+    var v1 = graph.GetVertex(1);
+    var v2 = graph.GetVertex(2);
+    var v3 = graph.GetVertex(3);
+    var v4 = graph.GetVertex(4);
+    var v5 = graph.GetVertex(5);
+    var v6 = graph.GetVertex(6);
+    var v7 = graph.GetVertex(7);
+
+    graph.AddEdge(v1,v2);
+    graph.AddEdge(v1,v3);
+    graph.AddEdge(v2,v5);
+    graph.AddEdge(v2,v6);
+    graph.AddEdge(v5,v6);
+    graph.AddEdge(v3,v4);
+
+    var matrix = graph.GetMatrix();
+
+    for (int i = 0; i < graph.Vertices.Count; i++)
+    {
+        for (int j = 0; j < graph.Vertices.Count; j++)
+        {
+            Console.Write($"| {matrix[i, j]} |");
+        }
+        Console.WriteLine();
+    }
+
+
+
+}
+
+void MyTree1()
+{
+    MyTreeGeneric<int> myTreeGeneric = new MyTreeGeneric<int>();
+    myTreeGeneric.Insert(5);
+    myTreeGeneric.Insert(3);
+    myTreeGeneric.Insert(7);
+    myTreeGeneric.Insert(1);
+    myTreeGeneric.Insert(2);
+    myTreeGeneric.Insert(8);
+    myTreeGeneric.Insert(6);
+    myTreeGeneric.Insert(9);
+    myTreeGeneric.Insert(10);
+    myTreeGeneric.Insert(4);
+
+    var prelist = myTreeGeneric.PreOrder();
+    foreach (var item in prelist)
+    {
+        Console.Write(item + ", ");
+    }
+    Console.ReadLine();
+
+    var postlist = myTreeGeneric.PostOrder();
+    foreach (var item in postlist)
+    {
+        Console.Write(item.ToString() + ", ");
+    }
+    Console.ReadLine();
+
+    var inlist = myTreeGeneric.InOrder();
+    foreach (var item in inlist)
+    {
+        Console.Write(item.ToString() + ", ");
+    }
+    Console.ReadLine();
+
+}
+void MyTree()
+{
+    MyBinaryTree integerTree = new MyBinaryTree();
+    integerTree.Insert(5);
+    integerTree.Insert(3);
+    integerTree.Insert(7);
+    integerTree.Insert(1);
+    integerTree.Insert(2);
+    integerTree.Insert(8);
+    integerTree.Insert(6);
+    integerTree.Insert(9);
+    integerTree.Insert(10);
+    integerTree.Insert(4);
+
+    var prelist = integerTree.PreOrder();
+    foreach (var item in prelist)
+    {
+        Console.Write(item + ", ");
+    }
+    Console.ReadLine();
+
+    var postlist = integerTree.PostOrder();
+    foreach (var item in postlist)
+    {
+        Console.Write(item.ToString() + ", ");
+    }
+    Console.ReadLine();
+
+    var inlist = integerTree.InOrder();
+    foreach (var item in inlist)
+    {
+        Console.Write(item.ToString() + ", ");
+    }
+    Console.ReadLine();
+
+
 }
 
 void MyQueue()
