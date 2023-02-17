@@ -10,11 +10,11 @@ using Graph;
 try
 {
 
-    MyGraph();
+    //MyGraph();
 
     //MyTree();
     //Console.WriteLine(new String('-',20));
-    //MyTree1();
+    MyTree1();
 }
 catch(Exception ex)
 {
@@ -92,6 +92,34 @@ void MyTree1()
 
     var inlist = myTreeGeneric.InOrder();
     foreach (var item in inlist)
+    {
+        Console.Write(item.ToString() + ", ");
+    }
+    Console.ReadLine();
+    //------------------------------------------
+
+    Console.WriteLine(new string('-',30));
+
+    
+    
+    Console.WriteLine(myTreeGeneric.Remove(7));
+
+    var prelist1 = myTreeGeneric.PreOrder();
+    foreach (var item in prelist1)
+    {
+        Console.Write(item + ", ");
+    }
+    Console.ReadLine();
+
+    var postlist1 = myTreeGeneric.PostOrder();
+    foreach (var item in postlist1)
+    {
+        Console.Write(item.ToString() + ", ");
+    }
+    Console.ReadLine();
+
+    var inlist1 = myTreeGeneric.InOrder();
+    foreach (var item in inlist1)
     {
         Console.Write(item.ToString() + ", ");
     }

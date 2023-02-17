@@ -1,7 +1,6 @@
 ﻿
 namespace Graph
 {
-
     public sealed class Vertex
     {
         public int Value { get; set; }
@@ -84,6 +83,14 @@ namespace Graph
             if (_vertex == null)
                 return null;
             return _vertex;
+        }
+
+        public Edge GetEdge(int fromValue, int toValue)
+        {
+            var _edge = Edges.FirstOrDefault(x => x.From.Value == fromValue && x.To.Value == toValue);
+            if (_edge == null)
+                return null;
+            return _edge;
         }
     }
 }
